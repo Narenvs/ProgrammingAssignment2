@@ -1,0 +1,18 @@
+> a <- rnorm(10000)
+> s <- matrix(a,100,100)
+> q <- makeCacheMatrix(s)
+> system.time(cacheSolve(q))
+   user  system elapsed 
+   0.01    0.00    0.01 
+> system.time(cacheSolve(q))
+   user  system elapsed 
+      0       0       0 
+> a <- rnorm(100000000)
+> s <- matrix(a,10000,10000)
+> az <- makeCacheMatrix(s)
+> system.time(cacheSolve(az))
+   user  system elapsed 
+ 977.22    1.15  985.57 
+> system.time(cacheSolve(az))
+   user  system elapsed 
+      0       0       0 
